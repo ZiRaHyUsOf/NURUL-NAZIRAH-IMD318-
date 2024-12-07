@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+      background-color: #D58936;
+      overflow: hidden;
+      background-color: #45364B;
+    }
+
+    .header {
+      position: relative;
+      padding: 0;
+      text-align: center;
+      margin-top: 10px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('omel.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      filter: brightness(1);
+      z-index: -1;
+    }
+
+    .header h1 {
+      font-size: 60px;
+      margin: 0;
+      background-image: linear-gradient(45deg, rgb(224, 220, 168), rgb(231, 189, 189), rgb(227, 154, 236), rgb(0, 246, 254));
+      text-shadow: 2px 2px 5px yellow;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(5);
+      z-index: 1;
+      animation: combinedAnimation 35s linear infinite, fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes combinedAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .header p {
+      font-size: 30px;
+      margin: 0;
+      background-image: linear-gradient(45deg, rgb(12, 0, 64), rgb(203, 37, 37), rgb(232, 45, 45), rgb(0, 0, 0));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(5);
+      z-index: 1;
+    }
+
+    a:link {
+      background-color: #D58936;
+      color: rgb(252, 192, 192);
+      border: 3px solid black;
+      padding: 5px 5px;
+      text-align: top;
+      font-size: 20px;
+      position: bottom;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    body {
+      background-color: bisque;
+    }
+
+    .audio-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .audio-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .audio-controls button {
+      background-color: #e48e0c;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .audio-controls button:hover {
+      background-color: #e0e24b;
+    }
+
+    .current-song {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #1304f1;
+    }
+
+    footer {
+      background-image: url(oren.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .footerContainer {
+      width: 100%;
+      padding: 50px 20px 10px;
+    }
+
+    .socialIcons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .socialIcons a {
+      text-decoration: none;
+      padding: 10px;
+      background-color: #ffffff;
+      margin: 10px;
+      border-radius: 50%;
+    }
+
+    .socialIcons a i {
+      font-size: 2em;
+      color: black;
+      opacity: 0.9;
+    }
+
+    .socialIcons a:hover {
+      background-color: #111;
+      transition: 0.5s;
+    }
+
+    .socialIcons a:hover i {
+      color: white;
+      transition: 0.5s;
+    }
+
+    .footerBottom {
+      background-color: #D58936;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .footerBottom p {
+      color: white;
+    }
+
+    .designer {
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      margin: 0px 5px;
+    }
+
+    
+    #clock {
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+      background-color: #f89849;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    @media (max-width: 700px) {
+      .footerNav ul {
+        flex-direction: column;
+      }
+
+      .footerNav ul li {
+        width: 50%;
+        text-align: center;
+        margin: 1px;
+      }
+
+      .socialIcons a {
+        padding: 8px;
+        margin: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="Education 2.html">EDUCATION</a></li>
+    <li><a href="Experience.html">EXPERIENCE</a></li>
+    <li><a href="Gallery.html">GALLERY</a></li>
+  </ul>
+
+  <div class="header">
+    <h1>WELCOME TO NAZIRAH'S WEBSITE </h1>
+    <marquee style="width: 100%; scrolldelay: 100; height: 100px; font-size: 40px; line-height: 100px;">
+      Don't worry, always be happy.
+    </marquee>
+    <div class="menu">
+      <a href="biodata.html">ABOUT ME</a>
+    </div>
+    
+    <div id="clock"></div>
+  </div>
+
+  <div class="audio-container">
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="WayV- POPPIN'LOVE.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="audio-controls">
+      <button onclick="previousSong()">Previous</button>
+      <button onclick="togglePlayPause()">Play/Pause</button>
+      <button onclick="nextSong()">Next</button>
+    </div>
+    <div id="currentSong" class="current-song"> Playing : WayV- POPPIN'LOVE</div>
+  </div>
+
+  <footer>
+    <div class="footerContainer">
+      <div class="socialIcons">
+        <a href="https://www.facebook.com/profile.php?id=100013954877405" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/zirahyusof_/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/najilahyusof" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@bubble_mon_?_t=8rWCgUBPVrO&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="http://www.youtube.com/@BibliotecaSegamat" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://wa.me/qr/WEVWQNEH4YM3G1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+
+      <script>
+        const songs = [
+          { title: "WayV - POPPIN'LOVE", url: "WayV- POPPIN'LOVE.mp3" },
+          { title: "Nitrus - CINTA", url: "Nitrus- CINTA.mp3" },
+          { title: "Nitrus - RESAH", url: "Nitrus- RESAH.mp3" },
+          { title: "WayV - HIGH FIVE", url: "WayV-HIGH FIVE.mp3" },
+          { title: "Anggi Marito - CARA MENCINTAIMU", url: "Anggi Marito- CARA MENCINTAIMU.mp3" },
+          { title: "Nadin Amizah - KERETA INI MELAJU TERLALU CEPAT", url: "Nadin Amizah - KERETA INI MELAJU TERLALU CEPAT.mp3" }
+        ];
+
+        let currentSongIndex = 0;
+
+        const audioPlayer = document.getElementById("audioPlayer");
+        const audioSource = document.getElementById("audioSource");
+        const currentSongDisplay = document.getElementById("currentSong");
+
+        function updateSong() {
+          const currentSong = songs[currentSongIndex];
+          audioSource.src = currentSong.url;
+          audioPlayer.load();
+          currentSongDisplay.textContent = "Playing: " + currentSong.title;
+          audioPlayer.play();
+        }
+
+        function togglePlayPause() {
+          if (audioPlayer.paused) {
+            audioPlayer.play();
+          } else {
+            audioPlayer.pause();
+          }
+        }
+
+        function nextSong() {
+          currentSongIndex = (currentSongIndex + 1) % songs.length;
+          updateSong();
+        }
+
+        function previousSong() {
+          currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+          updateSong();
+        }
+
+        updateSong();
+      </script>
+
+      <script>
+        function updateClock() {
+          const now = new Date();
+          let hours = now.getHours();
+          let minutes = now.getMinutes();
+          let seconds = now.getSeconds();
+
+          hours = (hours < 10 ? '0' : '') + hours;
+          minutes = (minutes < 10 ? '0' : '') + minutes;
+          seconds = (seconds < 10 ? '0' : '') + seconds;
+
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+      </script>
+
+    </div>
+    <div class="footerBottom">
+      <p>Copyright &copy;2023; Designed by <span class="designer">assignment imd318</span></p>
+    </div>
+  </footer>
+</body>
+</html>

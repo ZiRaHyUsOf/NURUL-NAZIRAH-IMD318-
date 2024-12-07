@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Lora, Marta;
+      padding: 15px;
+      background-color: rgb(243, 243, 170);
+    }
+
+    .menu {
+      overflow: hidden;
+    }
+
+    .menu a {
+      float: left;
+      display: block;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      background-color: #DCBF85;
+    }
+
+    .menu a:hover {
+      background-color: #4d2b32;
+      color:white;
+    }
+
+    button {
+      float: left;
+      height: 40px;
+      width: 60px;
+      padding: 2px;
+    }
+
+    .header {
+      position: relative;
+      padding: 0;
+      text-align: center;
+      margin-top: 10px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('omel.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      filter: brightness(1);
+      z-index: -1;
+    }
+
+    .header h1 {
+      font-size: 60px;
+      margin: 0;
+      background-image: linear-gradient(
+          45deg, rgb(19, 210, 239), rgb(0, 248, 13), rgb(0, 248, 13), rgb(0, 246, 254)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(5);
+      z-index: 1;
+      animation: combinedAnimation 35s linear infinite, fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes combinedAnimation {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-20px);
+      }
+      100% {
+          transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+
+    .header p {
+      font-size: 30px;
+      margin: 0;
+      background-image: linear-gradient(
+          45deg, rgb(12, 0, 64), rgb(203, 37, 37), rgb(232, 45, 45), rgb(0, 0, 0)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(5);
+      z-index: 1;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #DCBF85;
+      border-radius: 10px;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: #fffefd;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .topnav a:hover {
+      background-color: #d6b7b7;
+      color: black;
+    }
+
+    
+    .row {
+      display: flex;
+      justify-content: center;  
+      align-items: center;      
+      flex-wrap: wrap;          
+      gap: 20px;                
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;           
+    }
+
+    .card-2 {
+      background-color: #ebad61;
+      padding: 35px;
+      text-align: center;
+      width: 30%;               
+      min-width: 250px;         
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;      
+      justify-content: center;  
+    }
+
+    .card-2:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer Centering */
+    footer {
+      width: 100%;
+      text-align: center;
+      background-image: url(oren.gif);
+      background-size: cover;
+      padding: 50px 20px 10px;
+      margin-top: auto;
+    }
+
+    .socialIcons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .socialIcons a {
+      text-decoration: none;
+      padding: 10px;
+      background-color: #ffffff;
+      margin: 10px;
+      border-radius: 50%;
+    }
+
+    .socialIcons a i {
+      font-size: 2em;
+      color: black;
+      opacity: 0.9;
+    }
+
+    .socialIcons a:hover {
+      background-color: #111;
+      transition: 0.5s;
+    }
+
+    .socialIcons a:hover i {
+      color: white;
+    }
+
+    .footerBottom {
+      background-color: #D58936;
+      padding: 10px;
+      color: white;
+    }
+
+    
+    @media screen and (max-width: 800px) {
+      .card-2 {
+        width: 90%;              
+        min-width: unset;        
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <a href="index.html">Back</a>
+  </div>
+
+  <div class="header">
+    <h1>NAZIRAH'S WEBSITE</h1>
+    <marquee style="width: 100%; scrolldelay: 100; height: 100px; font-size: 40px; line-height: 100px;">
+      Don't worry; always be happy. 
+    </marquee>
+  </div>
+
+  <div class="topnav">
+    <a href="index.html">HOME</a>
+    <a href="biodata.html">BIODATA</a>
+    <a href="Education 2.html">EDUCATION</a>
+    <a href="Experience.html">EXPERIENCE</a>
+    <a href="Gallery.html">GALLERY</a>
+  </div>
+
+  <style>
+    .card-2 img {
+      width: 200px;
+      height: 200px; 
+      object-fit: cover; 
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+  
+  <div class="row">
+    <div class="card-2" style="height: fit-content; align-items: center;">
+      <img src="SKT6.jpeg" alt="Your Image">
+      <h2><sub>SEKOLAH</sub> KEBANGSAAN <sup>BANDAR T6</sup></h2>
+      <br>
+      <ul>
+        <li>YEAR:2011-2016</li>
+      </ul>
+      <br>
+      <p>When I transferred to this school in the 4th grade, I took the Primary School Achievement Test (UPSR) and achieved excellent results. Throughout this elementary school, I had many friends, and even now I am still friends with them.</p>
+    </div>
+  
+    <div class="card-2" style="height: fit-content; align-items: center;">
+      <img src="SMKT6.jpeg" alt="Your Image">
+      <h2><sub>SEKOLAH</sub> MENENGAH <sup>KEBANGSAAN T6</sup></h2>
+      <br>
+      <ul>
+        <li>YEAR:2016-2022</li>
+      </ul>
+      <br>
+      <p>I went to school here for 5 years and have taken important exams such as Form 3 Assessment and Malaysian Education Certificate. I have also attended a co-curricular class, which is the Civil Defense Force.</p>
+    </div>
+  
+    <div class="card-2" style="height: fit-content; align-items: center;">
+      <img src="logo uitm.jpg" alt="Your Image">
+      <h2><sub>UNIVERSITY</sub> TECHNOLOGY MARA(UiTM) <sup>CAMPUS SEGAMAT</sup></h2>
+      <br>
+      <ul>
+        <li>YEAR:2022-2024</li>
+      </ul>
+      <br>
+      <p>I have continued my studies to the diploma level at UiTM Segamat. I have taken the information management course and am now in the last semester.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footerContainer" style="width: auto;">
+      <div class="socialIcons">
+        <a href="https://www.facebook.com/profile.php?id=100013954877405" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/zirahyusof_/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/najilahyusof" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@bubble_mon_?_t=8rWCgUBPVrO&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="http://www.youtube.com/@BibliotecaSegamat" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://wa.me/qr/WEVWQNEH4YM3G1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>Copyright &copy;2023; Designed by <span class="designer">assignment imd318</span></p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
